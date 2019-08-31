@@ -2,7 +2,7 @@ package Petle;
 
 import java.util.Scanner;
 
-public class DniTygodnia3 {
+public class DniTygodnia4ObslugaWyjatkow {
     static String nazwaDnsTygodnia(int numer){
         switch (numer) {
             case 1:
@@ -14,7 +14,7 @@ public class DniTygodnia3 {
             case 4:
                 return "czwartek";
             case 5:
-                return "piatek"
+                return "piatek";
             case 6:
                 return "sobota";
             case 7:
@@ -23,18 +23,30 @@ public class DniTygodnia3 {
                 return "poza zakresem";
 
         }
-        
-        
-    }
-    
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("podaj nr dnia tygodnia: ");
-        int numer = sc.nextInt();
-        String wynik = nazwaDnsTygodnia(numer);
 
-        System.out.println("to jest " + wynik);
-        
+
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+                System.out.println("podaj nr dnia tygodnia: ");
+                int numer = sc.nextInt();
+
+                String wynik = nazwaDnsTygodnia(numer);
+
+                System.out.println("to jest " + wynik);
+        } catch (Exception e) {
+            System.out.println("wyjątek " + e);
+        }
+        System.out.println("dziękuję za uwagę ");
 
     }
 }
+
+
+
+
+
