@@ -1,0 +1,34 @@
+package Tablice1Dzien;
+
+import java.util.Arrays;
+
+public class Tabilce1 {
+    public static void main(String[] args) {
+
+        String[] imiona = new String[10];
+        imiona[0] = "Artur";
+        imiona[1] = "Yevhen";
+        imiona[2] = "Mateusz";
+        imiona[3] = "Artur";
+        imiona[4] = "Yevhen";
+        imiona[5] = "Mateusz";
+        imiona[6] = "Artur";
+        imiona[7] = "Yevhen";
+        imiona[8] = "Mateusz";
+        imiona[9] = "Artur";
+
+
+        System.out.println("Rozmiar tablicy " + imiona.length);
+
+        for(String imie : imiona) {
+            System.out.println("kolejna osoba ma na imi " + imie);
+        }
+        System.out.println();
+
+        for (int i =0; i < imiona.length; i++) {
+            imiona[i].toLowerCase();
+
+        }
+        System.out.println("Na końcu tablica zawiera " + Arrays.toString(imiona));
+    }
+}
