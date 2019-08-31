@@ -1,0 +1,41 @@
+package Parkomat;
+
+import java.util.Scanner;
+
+/*
+godzina kosztuje 3zl
+program pyta o ilość godzin parkowania
+
+program oblicza i wpisuje kwotę
+program prosi o wrzucenie monety
+urzytkownik wrzuca monetę, a program wpisuje ile jeszcze pozostało do zapłaty
+suma i podsumowanie
+
+ */
+public class Parkomat {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int koszt = 3;
+
+        System.out.println("Ile godzin chcesz parkować?");
+        int czasParkowani = sc.nextInt();
+
+        int sumaKosztow = czasParkowani * koszt;
+        System.out.println("masz do zapłaty: " + sumaKosztow + "zł");
+        System.out.println("wrzuc monetę");
+
+        int wrzuconeMonety = sc.nextInt();
+
+        while (sumaKosztow > wrzuconeMonety){
+            int z = sumaKosztow - wrzuconeMonety;
+
+            System.out.println("Pozostało Ci do wrzucenia " + z + "zł");
+            System.out.println("wrzuc monetę");
+            int kolejneWrzuconeMonety = sc.nextInt();
+            wrzuconeMonety += kolejneWrzuconeMonety;
+
+        }
+
+        System.out.println("dziekuje. milego dnia");
+    }
+}
