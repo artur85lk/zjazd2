@@ -1,0 +1,21 @@
+package PetleFor;
+
+public class TabliczkaMnozenia {
+    public static void main(String[] args) {
+        int x = 1;
+
+        for(int w =1; w <=10; w++){
+            for (int k = 1; k < 10; k++) {
+                System.out.printf("%3d", k * w );
+
+            }
+            System.out.println();
+
+
+
+        }
+
+
+    }
+}
+
