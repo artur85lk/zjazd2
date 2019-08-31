@@ -1,0 +1,30 @@
+package Funkcje;
+
+import java.util.Scanner;
+
+public class Silnia {
+
+    static int silnia(int n) {
+        int silniaWynik = 1;
+
+        int x = 1;
+        for (int i = 1; i <= n; i++) {
+            silniaWynik = silniaWynik * i;
+
+
+        }
+
+    return silniaWynik;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj kolejne liczby a ja obliczą ich silnie");
+        while (sc.hasNextInt()){
+            int liczba = sc.nextInt();
+            var wynik = silnia(liczba);
+            System.out.printf("%d! = %d\n", liczba, wynik);
+
+    }
+}
+}
