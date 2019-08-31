@@ -1,0 +1,26 @@
+package Tablice1Dzien;
+
+public class Przyklady1 {
+
+    static int suma(int[] t) {
+        int wynik = 0;
+        for (int element : t) {
+            wynik += element;
+
+        }
+        return wynik;
+    }
+    public static void main(String[] args) {
+        int[] a = {10, 20, 30, 40, 50};
+        int[] b = {7, 1, 9, 2, 13, -5, 0, 4, 7};
+        int[] c = {3, 4, 5};
+
+        int wynik1 = suma(a);
+        System.out.println(wynik1);
+
+        int wynik2 = suma(b);
+        System.out.println(wynik2);
+
+        System.out.println(suma(c));
+    }
+}
