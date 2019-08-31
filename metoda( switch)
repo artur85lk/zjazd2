@@ -20,7 +20,8 @@ public class DniTygodnia4ObslugaWyjatkow {
             case 7:
                 return "niedziela";
             default:
-                return "poza zakresem";
+                throw new IllegalArgumentException("liczba poza zakresem");
+
 
         }
 
