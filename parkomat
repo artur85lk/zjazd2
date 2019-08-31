@@ -2,40 +2,43 @@ package Parkomat;
 
 import java.util.Scanner;
 
-/*
-godzina kosztuje 3zl
-program pyta o ilość godzin parkowania
-
-program oblicza i wpisuje kwotę
-program prosi o wrzucenie monety
-urzytkownik wrzuca monetę, a program wpisuje ile jeszcze pozostało do zapłaty
-suma i podsumowanie
-
- */
-public class Parkomat {
+public class Parkomat2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int koszt = 3;
 
-        System.out.println("Ile godzin chcesz parkować?");
-        int czasParkowani = sc.nextInt();
+    System.out.println("Ile godzin chcesz parkować?");
+    int czasParkowani = sc.nextInt();
 
-        int sumaKosztow = czasParkowani * koszt;
-        System.out.println("masz do zapłaty: " + sumaKosztow + "zł");
+    int sumaKosztow = czasParkowani * koszt;
+    System.out.println("masz do zapłaty: " + sumaKosztow + "zł");
+    System.out.println("wrzuc monetę");
+
+    int wrzuconeMonety = sc.nextInt();
+
+    if(wrzuconeMonety < 1){
+        System.out.println("automat nie obsługuje groszy");
+    }
+
+    while (sumaKosztow > wrzuconeMonety) {
+        int zaplacono = sumaKosztow - wrzuconeMonety;
+
+        System.out.println("Pozostało Ci do wrzucenia " + zaplacono + "zł");
         System.out.println("wrzuc monetę");
+        int kolejneWrzuconeMonety = sc.nextInt();
+        wrzuconeMonety += kolejneWrzuconeMonety;
+        //int czySaGrosze = (wrzuconeMonety + kolejneWrzuconeMonety)%
+        //if(z != 0)
 
-        int wrzuconeMonety = sc.nextInt();
 
-        while (sumaKosztow > wrzuconeMonety){
-            int z = sumaKosztow - wrzuconeMonety;
-
-            System.out.println("Pozostało Ci do wrzucenia " + z + "zł");
-            System.out.println("wrzuc monetę");
-            int kolejneWrzuconeMonety = sc.nextInt();
-            wrzuconeMonety += kolejneWrzuconeMonety;
-
+    }
+        if(wrzuconeMonety > sumaKosztow){
+            int reszta = wrzuconeMonety - sumaKosztow;
+            System.out.println("zwracam reszty " + reszta + "zł");
         }
+
 
         System.out.println("dziekuje. milego dnia");
     }
 }
+
